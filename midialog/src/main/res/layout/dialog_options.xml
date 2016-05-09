@@ -28,7 +28,8 @@
             android:layout_below="@+id/txtTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/listView" />
+            android:listSelector="@drawable/option_color"
+            android:id="@+id/listView"/>
 
     </RelativeLayout>
 </RelativeLayout>
