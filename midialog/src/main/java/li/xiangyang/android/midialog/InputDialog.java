@@ -14,13 +14,16 @@ public class InputDialog extends BaseDialog {
     private TextView txtTitle;
 
     private IListener listener;
+    private boolean closeManually=true;
 
     public InputDialog(Context context) {
-        this(context, null, null, null);
+        this(context, null, null, null, null);
     }
 
-    public InputDialog(Context context, String title, String defaultText, String hint) {
+    public InputDialog(Context context, IListener listener, String title, String defaultText, String hint) {
         super(context, R.layout.dialog_input_one);
+        this.listener = listener;
+
         txtInput = (EditText) findViewById(R.id.txtInput);
         txtTitle = (TextView) findViewById(R.id.txtTitle);
         setTitle(title);
@@ -30,8 +33,9 @@ public class InputDialog extends BaseDialog {
         initEvents();
     }
 
+
     private void setTitle(String title) {
-        if (title!=null){
+        if (title != null) {
             txtTitle.setText(title);
         }
     }
@@ -46,6 +50,10 @@ public class InputDialog extends BaseDialog {
         if (txt != null) {
             txtInput.setHint(txt);
         }
+    }
+
+    public void setCloseManually(boolean closeManually) {
+        this.closeManually = closeManually;
     }
 
     public String getText() {
@@ -67,12 +75,15 @@ public class InputDialog extends BaseDialog {
                 } else {
                     if (view.getId() == R.id.btnLeft) {
                         onCancel();
+                        dismiss();
                     } else {
                         if (listener != null) {
-                            listener.onDone(getText());
+                            if (!closeManually){
+                                dismiss();
+                            }
+                            listener.onDone(InputDialog.this,getText());
                         }
                     }
-                    dismiss();
                 }
 
             }
@@ -92,6 +103,6 @@ public class InputDialog extends BaseDialog {
     public static interface IListener {
         void onCancel();
 
-        void onDone(String text);
+        void onDone(InputDialog dialog,String text);
     }
 }

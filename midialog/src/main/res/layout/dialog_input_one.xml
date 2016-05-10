@@ -30,10 +30,12 @@
             android:id="@+id/txtInput"
             android:textSize="12dp"
             android:textColor="#7f7f7f"
+            android:textColorHint="#EEEEEE"
+            android:hint="请输入"
             android:layout_below="@+id/txtTitle"
             android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/text_box"/>
+            android:background="@drawable/text_box" />
 
         <ImageView
             android:layout_width="37dp"
@@ -54,7 +56,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="23dp"
             >
-            <TextView
+            <li.xiangyang.android.touchable_controls.TouchableTextView
                 android:layout_width="157dp"
                 android:layout_height="40dp"
                 android:id="@+id/btnLeft"
@@ -63,7 +65,7 @@
                 android:textColor="#737373"
                 android:textSize="13dp"
                 android:background="@drawable/button_left" />
-            <TextView
+            <li.xiangyang.android.touchable_controls.TouchableTextView
                 android:layout_width="157dp"
                 android:layout_height="40dp"
                 android:id="@+id/btnRight"
