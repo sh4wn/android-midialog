@@ -44,6 +44,7 @@ public class BouncingListView extends ListView {
                     if (listener != null) {
                         listener.onChange(BouncingListView.this, selection);
                     }
+                    setSelection(selection);
                 }
             }
 

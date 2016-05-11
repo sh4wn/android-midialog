@@ -62,7 +62,6 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
                     thirdSelelction = selection;
                     adapterThird.notifyDataSetChanged();
                 }
-                listView.setSelection(selection);
                 if (Select3Dialog.this.listener != null) {
                     Select3Dialog.this.listener.onChange(index, selection);
                 }
