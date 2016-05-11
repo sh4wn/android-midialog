@@ -13,8 +13,8 @@ public class LinearNumberSelectDialog extends SelectDialog {
     private IListener listener;
     private List<String> items = new ArrayList<>();
 
-    public LinearNumberSelectDialog(Context context, IListener lis, String title, int start, int end, int step, int selection) {
-        super(context, null, title);
+    public LinearNumberSelectDialog(Context context, IListener lis, String title, String uint, int start, int end, int step, int selection) {
+        super(context, null, title, uint);
         this.listener = lis;
         super.setListener(new SelectDialog.IListener() {
             @Override

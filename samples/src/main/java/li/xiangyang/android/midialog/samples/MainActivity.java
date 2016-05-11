@@ -103,8 +103,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onDone(int number) {
                         Toast.makeText(MainActivity.this, "" + number, Toast.LENGTH_SHORT).show();
                     }
-                }, "体重", 130, 230, 1, 0);
-                dialog.setUint("cm");
+                }, "体重", "千克", 130, 230, 1, 0);
                 dialog.show();
             }
         });
