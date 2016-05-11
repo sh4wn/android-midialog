@@ -130,6 +130,8 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
 
         if (sources==null || sources.size()==0){
             listSecond.setVisibility(View.GONE);
+            findViewById(R.id.lineSecond).setVisibility(View.GONE);
+            findViewById(R.id.rlSecond).setVisibility(View.GONE);
             return;
         }
 
@@ -152,6 +154,8 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
     public void setItems3(List<String> sources, int selection) {
         if (sources==null || sources.size()==0){
             listThird.setVisibility(View.GONE);
+            findViewById(R.id.lineThird).setVisibility(View.GONE);
+            findViewById(R.id.rlThird).setVisibility(View.GONE);
             return;
         }
         List<String> items = new ArrayList<>(sources.size() + 4);
@@ -207,7 +211,6 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
     @Override
     public void formatItemView(CommonListAdapter<String> adapter, String item, View view, int index, boolean group) {
 
-
         int select = 0;
         if (adapter == adapterFirst) {
             select = firstSelection;
@@ -231,7 +234,6 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
             vh.txt.setSelected(false);
             vh.txt.setTextSize(dp2px(5));
         }
-
     }
 
     private class ViewHolder {

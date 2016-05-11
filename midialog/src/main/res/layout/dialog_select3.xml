@@ -38,8 +38,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:paddingLeft="10dp">
+                    android:orientation="horizontal">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -57,8 +56,8 @@
                             android:id="@+id/txtUintFirst"
                             android:layout_width="wrap_content"
                             android:layout_height="16dp"
-                            android:gravity="top"
                             android:layout_centerInParent="true"
+                            android:gravity="top"
                             android:paddingLeft="60dp"
                             android:text="年"
                             android:textColor="#FF6A00"
@@ -66,11 +65,13 @@
                     </RelativeLayout>
 
                     <View
+                        android:id="@+id/lineSecond"
                         android:layout_width="1px"
                         android:layout_height="match_parent"
                         android:background="#D8D8D8"></View>
 
                     <RelativeLayout
+                        android:id="@+id/rlSecond"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="390">
@@ -86,8 +87,8 @@
                             android:id="@+id/txtUintSecond"
                             android:layout_width="wrap_content"
                             android:layout_height="16dp"
-                            android:gravity="top"
                             android:layout_centerInParent="true"
+                            android:gravity="top"
                             android:paddingLeft="40dp"
                             android:text="月"
                             android:textColor="#FF6A00"
@@ -95,11 +96,13 @@
                     </RelativeLayout>
 
                     <View
+                        android:id="@+id/lineThird"
                         android:layout_width="1px"
                         android:layout_height="match_parent"
                         android:background="#D8D8D8"></View>
 
                     <RelativeLayout
+                        android:id="@+id/rlThird"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="390">
@@ -115,8 +118,8 @@
                             android:id="@+id/txtUintThird"
                             android:layout_width="wrap_content"
                             android:layout_height="16dp"
-                            android:gravity="top"
                             android:layout_centerInParent="true"
+                            android:gravity="top"
                             android:paddingLeft="40dp"
                             android:text="日"
                             android:textColor="#FF6A00"
