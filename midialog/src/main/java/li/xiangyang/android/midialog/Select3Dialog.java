@@ -45,21 +45,27 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
         listSecond = (BouncingListView) findViewById(R.id.listSecond);
         listThird = (BouncingListView) findViewById(R.id.listThird);
 
-        BouncingListView.OnChangeListener lis = new BouncingListView.OnChangeListener() {
+        final BouncingListView.OnChangeListener lis = new BouncingListView.OnChangeListener() {
             @Override
             public void onChange(BouncingListView listView, int selection) {
+                int index = 0;
                 if (listView == listFirst) {
+                    index = 1;
                     firstSelection = selection;
                     adapterFirst.notifyDataSetChanged();
-
                 } else if (listView == listSecond) {
+                    index = 2;
                     secondSelectin = selection;
                     adapterSecond.notifyDataSetChanged();
                 } else if (listView == listThird) {
+                    index = 3;
                     thirdSelelction = selection;
                     adapterThird.notifyDataSetChanged();
                 }
                 listView.setSelection(selection);
+                if (Select3Dialog.this.listener != null) {
+                    Select3Dialog.this.listener.onChange(index, selection);
+                }
             }
         };
         listFirst.setOnChangeListener(lis);
@@ -180,7 +186,7 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
                     onCancel();
                 } else {
                     if (listener != null) {
-                        listener.onDone(firstSelection, secondSelectin , thirdSelelction );
+                        listener.onDone(firstSelection, secondSelectin, thirdSelelction);
                     }
                 }
                 dismiss();
@@ -238,6 +244,8 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
 
     public static interface IListener {
         void onCancel();
+
+        void onChange(int index, int selection);
 
         void onDone(int first, int second, int third);
     }
