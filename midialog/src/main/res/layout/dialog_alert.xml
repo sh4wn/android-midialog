@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#99000000">
+
+
+    <RelativeLayout
+        android:id="@+id/box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f8f8f8"
+        android:layout_alignParentBottom="true"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提示"
+                android:id="@+id/txtTitle"
+                android:layout_centerHorizontal="true"
+                android:textSize="15dp"
+                android:textColor="#444444"
+                android:layout_marginBottom="22dp"
+                android:layout_marginTop="24dp"
+                android:layout_above="@+id/txtMessage"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="信息"
+                android:id="@+id/txtMessage"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_centerHorizontal="true"
+                android:layout_above="@+id/linearLayout"
+                android:textSize="13sp"
+                android:textColor="#7c7c7c"
+                android:layout_marginBottom="22dp"/>
+
+            <LinearLayout
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="23dp"
+                android:id="@+id/linearLayout">
+                <li.xiangyang.android.touchable_controls.TouchableTextView
+                    android:layout_width="314dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/btnSure"
+                    android:text="确定"
+                    android:gravity="center"
+                    android:textColor="#737373"
+                    android:textSize="13dp"
+                    android:background="@drawable/button" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

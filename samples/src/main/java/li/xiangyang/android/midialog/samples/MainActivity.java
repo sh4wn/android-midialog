@@ -1,23 +1,18 @@
 package li.xiangyang.android.midialog.samples;
 
-import android.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
 
+import li.xiangyang.android.midialog.AlertDialog;
 import li.xiangyang.android.midialog.ConfirmDialog;
 import li.xiangyang.android.midialog.DatePickerDialog;
 import li.xiangyang.android.midialog.InputDialog;
 import li.xiangyang.android.midialog.LinearNumberSelectDialog;
 import li.xiangyang.android.midialog.OptionsDialog;
 import li.xiangyang.android.midialog.ProgressDialog;
-import li.xiangyang.android.midialog.Select3Dialog;
-import li.xiangyang.android.midialog.SelectDialog;
-import li.xiangyang.android.midialog.samples.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,7 +28,9 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btnProgress).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new ProgressDialog(MainActivity.this).show();
+                ProgressDialog dialog=new ProgressDialog(MainActivity.this);
+                dialog.setCancelable(true);
+                dialog.show();
             }
         });
         findViewById(R.id.btnInput).setOnClickListener(new View.OnClickListener() {
@@ -104,6 +101,19 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "" + number, Toast.LENGTH_SHORT).show();
                     }
                 }, "体重", "千克", 130, 230, 1, 0);
+                dialog.show();
+            }
+        });
+
+        findViewById(R.id.btnAlert).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog dialog = new AlertDialog(MainActivity.this, new AlertDialog.IListener() {
+                    @Override
+                    public void onDone() {
+
+                    }
+                }, "提示", "这是提示");
                 dialog.show();
             }
         });
