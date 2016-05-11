@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="67dp"
         android:layout_alignParentBottom="true"
-        android:background="@android:color/white">
+        android:background="#f8f8f8">
 
         <ProgressBar
             android:layout_width="20dp"

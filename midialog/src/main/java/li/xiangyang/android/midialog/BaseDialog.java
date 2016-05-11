@@ -83,5 +83,13 @@ abstract class BaseDialog {
 
     }
 
+    private float displayDensity;
+    protected float dp2px(float dp){
+        if (displayDensity==0){
+            displayDensity=context.getResources().getDisplayMetrics().density;
+        }
+        return (dp*displayDensity+0.1f);
+    }
+
 
 }

@@ -72,7 +72,7 @@ public class OptionsDialog extends BaseDialog implements CommonListAdapter.ViewF
     }
 
     @Override
-    public void formatItemView(String item, View view, int index, boolean group) {
+    public void formatItemView(CommonListAdapter<String> adapter,String item, View view, int index, boolean group) {
         TextView txt = (TextView) view.findViewById(R.id.txtOption);
         txt.setText(item);
         view.findViewById(R.id.imgSelected).setVisibility(index == selected ? View.VISIBLE : View.INVISIBLE);

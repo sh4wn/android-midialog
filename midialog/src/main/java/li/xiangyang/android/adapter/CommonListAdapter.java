@@ -24,18 +24,18 @@ public class CommonListAdapter<T> extends BaseAdapter {
     int groupLayoutResId;
     WeakReference<ViewFormater> formater;
 
-    public CommonListAdapter(Context cxt, List<T> items, Set<Long> splitItems, int itemLayoutResId, int groupLayoutResId, ViewFormater<T> formater){
-        this.cxt=cxt;
-        this.items=items;
-        this.splitItems=splitItems;
-        this.formater=new WeakReference<ViewFormater>(formater);
-        this.itemLayoutResId=itemLayoutResId;
-        this.groupLayoutResId=groupLayoutResId;
+    public CommonListAdapter(Context cxt, List<T> items, Set<Long> splitItems, int itemLayoutResId, int groupLayoutResId, ViewFormater<T> formater) {
+        this.cxt = cxt;
+        this.items = items;
+        this.splitItems = splitItems;
+        this.formater = new WeakReference<ViewFormater>(formater);
+        this.itemLayoutResId = itemLayoutResId;
+        this.groupLayoutResId = groupLayoutResId;
     }
 
-    public void changeItems(List<T> items, Set<Long> splitItems){
-        this.items=items;
-        this.splitItems=splitItems;
+    public void changeItems(List<T> items, Set<Long> splitItems) {
+        this.items = items;
+        this.splitItems = splitItems;
         this.notifyDataSetChanged();
     }
 
@@ -56,21 +56,21 @@ public class CommonListAdapter<T> extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        boolean group=splitItems!=null && splitItems.contains((long)position);
+        boolean group = splitItems != null && splitItems.contains((long) position);
         if (convertView == null || !Boolean.valueOf(group).equals(convertView.getTag(R.layout.list_group_header))) {
-            if (group){
-                convertView = LayoutInflater.from(cxt).inflate(groupLayoutResId, parent,false);
-                convertView.setTag(R.layout.list_group_header,true);
-            }else{
-                convertView = LayoutInflater.from(cxt).inflate(itemLayoutResId, parent,false);
+            if (group) {
+                convertView = LayoutInflater.from(cxt).inflate(groupLayoutResId, parent, false);
+                convertView.setTag(R.layout.list_group_header, true);
+            } else {
+                convertView = LayoutInflater.from(cxt).inflate(itemLayoutResId, parent, false);
                 convertView.setTag(R.layout.list_group_header, false);
             }
         }
-        formater.get().formatItemView(items.get(position), convertView,position,group);
+        formater.get().formatItemView(this, items.get(position), convertView, position, group);
         return convertView;
     }
 
-    public static interface ViewFormater<T>{
-        void formatItemView(T item, View view, int index, boolean group);
+    public static interface ViewFormater<T> {
+        void formatItemView(CommonListAdapter<T> adapter, T item, View view, int index, boolean group);
     }
 }

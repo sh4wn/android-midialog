@@ -3,4 +3,13 @@
 
     <style name="DialogTheme" parent="android:Theme.DeviceDefault.NoActionBar">
     </style>
+
+    <style name="select_item_normal_style">
+        <item name="android:textSize">11.3sp</item>
+        <item name="android:textColor">#9b9b9b</item>
+    </style>
+    <style name="select_item_selected_style">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#FF6A00</item>
+    </style>
 </resources>
