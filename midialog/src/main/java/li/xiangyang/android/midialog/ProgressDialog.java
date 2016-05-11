@@ -19,6 +19,7 @@ public class ProgressDialog extends BaseDialog {
         txtProgress = (TextView) dialog.findViewById(R.id.txtProgress);
         findViewById(R.id.box).setClickable(true);
         setProgressString(progressStr);
+        setCancelable(false);
     }
 
     public void setProgressString(String txt) {

@@ -76,6 +76,7 @@ abstract class BaseDialog {
                         onCancel();
                         dialog.dismiss();
                     }
+                    return true;
                 }
                 return false;
             }
@@ -84,11 +85,12 @@ abstract class BaseDialog {
     }
 
     private float displayDensity;
-    protected float dp2px(float dp){
-        if (displayDensity==0){
-            displayDensity=context.getResources().getDisplayMetrics().density;
+
+    protected float dp2px(float dp) {
+        if (displayDensity == 0) {
+            displayDensity = context.getResources().getDisplayMetrics().density;
         }
-        return (dp*displayDensity+0.1f);
+        return (dp * displayDensity + 0.1f);
     }
 
 
