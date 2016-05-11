@@ -1,6 +1,7 @@
 package li.xiangyang.android.midialog;
 
 import android.content.Context;
+import android.content.Intent;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -36,6 +37,7 @@ public class DatePickerDialog extends Select3Dialog {
             public void onChange(int index, int selection) {
                 if (index == 1) {
                     currentYear = Integer.parseInt(years.get(selection));
+                    initDays();
                 } else if (index == 2) {
                     currentMonth = Integer.parseInt(months.get(selection));
                     initDays();
@@ -59,18 +61,23 @@ public class DatePickerDialog extends Select3Dialog {
         }
 
         for (int i = 1; i <= 12; i++) {
-            months.add(i + "");
+            months.add(digitalString(i));
         }
 
-        for (int i = 1; i <= 31; i++) {
-            days.add(i + "");
-        }
-
-        setItems(years, years.indexOf("" + currentYear));
-        setItems2(months, months.indexOf("" + currentMonth));
+        setItems(years, years.indexOf(digitalString(currentYear)));
+        setItems2(months, months.indexOf(digitalString(currentMonth)));
         initDays();
 
         setUints("年", "月", "日");
+    }
+
+
+    private String digitalString(int digital) {
+        if (digital < 10) {
+            return "0" + digital;
+        } else {
+            return "" + digital;
+        }
     }
 
     private void initDays() {
@@ -100,10 +107,12 @@ public class DatePickerDialog extends Select3Dialog {
 
         days.clear();
         for (int i = 1; i <= totalDay; i++) {
-            days.add(i + "");
+            days.add(digitalString(i));
         }
-        int selection = days.indexOf("" + currentDay);
-        setItems3(days, selection > 0 ? selection : 0);
+        int selection = days.indexOf(digitalString(currentDay));
+        selection=selection > 0 ? selection : days.size()-1;
+        setItems3(days,selection);
+        currentDay= Integer.parseInt(days.get(selection));
     }
 
     public static interface IListener {

@@ -106,15 +106,14 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
     }
 
     public void setItems(List<String> sources, int selection) {
-
+        if (sources==null || sources.size()==0){
+            listFirst.setVisibility(View.GONE);
+            return;
+        }
         List<String> items = new ArrayList<>(sources.size() + 4);
         items.addAll(sources);
 
         itemsFirst = items;
-        if (itemsFirst == null || itemsFirst.size() == 0) {
-            listFirst.setVisibility(View.GONE);
-            return;
-        }
         firstSelection = selection;
         items.add(0, "");
         items.add(0, "");
@@ -128,14 +127,16 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
     }
 
     public void setItems2(List<String> sources, int selection) {
+
+        if (sources==null || sources.size()==0){
+            listSecond.setVisibility(View.GONE);
+            return;
+        }
+
         List<String> items = new ArrayList<>(sources.size() + 4);
         items.addAll(sources);
 
         itemsSecond = items;
-        if (itemsSecond == null || itemsSecond.size() == 0) {
-            listSecond.setVisibility(View.GONE);
-            return;
-        }
         secondSelectin = selection;
         items.add(0, "");
         items.add(0, "");
@@ -149,15 +150,14 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
     }
 
     public void setItems3(List<String> sources, int selection) {
+        if (sources==null || sources.size()==0){
+            listThird.setVisibility(View.GONE);
+            return;
+        }
         List<String> items = new ArrayList<>(sources.size() + 4);
         items.addAll(sources);
 
         itemsThird = items;
-        if (itemsThird == null || itemsThird.size() == 0) {
-            listThird.setVisibility(View.GONE);
-            return;
-        }
-
         thirdSelelction = selection;
 
         items.add(0, "");
