@@ -11,6 +11,11 @@ import java.util.List;
 public class SelectDialog extends Select3Dialog {
     private IListener mListener;
 
+    public SelectDialog(Context context, Select3Dialog.IListener listener, String title, IListener mListener) {
+        super(context, listener, title);
+        this.mListener = mListener;
+    }
+
     public SelectDialog(Context context, IListener listener, String title, String... items) {
         super(context, null, title, Arrays.asList(items), null, null);
         super.setListener(new Select3Dialog.IListener() {
@@ -35,6 +40,14 @@ public class SelectDialog extends Select3Dialog {
         });
 
         mListener = listener;
+    }
+
+    public void setListener(IListener lis) {
+        this.mListener = lis;
+    }
+
+    public void setItems(List<String> items, int selection) {
+        super.setItems(items, selection);
     }
 
     public void setUint(String uint) {

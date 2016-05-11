@@ -12,6 +12,7 @@ import java.util.List;
 import li.xiangyang.android.midialog.ConfirmDialog;
 import li.xiangyang.android.midialog.DatePickerDialog;
 import li.xiangyang.android.midialog.InputDialog;
+import li.xiangyang.android.midialog.LinearNumberSelectDialog;
 import li.xiangyang.android.midialog.OptionsDialog;
 import li.xiangyang.android.midialog.ProgressDialog;
 import li.xiangyang.android.midialog.Select3Dialog;
@@ -20,9 +21,9 @@ import li.xiangyang.android.midialog.samples.*;
 
 public class MainActivity extends AppCompatActivity {
 
-    int year=1991;
-    int month=2;
-    int day=23;
+    int year = 1991;
+    int month = 2;
+    int day = 23;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,11 +62,11 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btnConfirm).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new ConfirmDialog(MainActivity.this,null,"确认","确认吗").show();
+                new ConfirmDialog(MainActivity.this, null, "确认", "确认吗").show();
             }
         });
 
-        findViewById(R.id.btnSelect3).setOnClickListener(new View.OnClickListener(){
+        findViewById(R.id.btnSelect3).setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -78,13 +79,13 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onDone(int year, int month, int day) {
-                        MainActivity.this.year=year;
-                        MainActivity.this.month=month;
-                        MainActivity.this.day=day;
+                        MainActivity.this.year = year;
+                        MainActivity.this.month = month;
+                        MainActivity.this.day = day;
 
-                        Toast.makeText(MainActivity.this,""+year+":"+month+":"+day,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "" + year + ":" + month + ":" + day, Toast.LENGTH_SHORT).show();
                     }
-                },"出生日期",year,month,day).show();
+                }, "出生日期", year, month, day).show();
             }
         });
 
@@ -92,21 +93,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                List<String> heights=new ArrayList<String>(100);
-                for (int i=130;i<230;i++){
-                    heights.add(i+"");
-                }
-                SelectDialog dialog=new SelectDialog(MainActivity.this, new SelectDialog.IListener() {
+                LinearNumberSelectDialog dialog = new LinearNumberSelectDialog(MainActivity.this, new LinearNumberSelectDialog.IListener() {
                     @Override
                     public void onCancel() {
 
                     }
-                    @Override
-                    public void onDone(int selection) {
 
-                        Toast.makeText(MainActivity.this,""+selection,Toast.LENGTH_SHORT).show();
+                    @Override
+                    public void onDone(int number) {
+                        Toast.makeText(MainActivity.this, "" + number, Toast.LENGTH_SHORT).show();
                     }
-                },"体重",heights.toArray(new String[heights.size()]));
+                }, "体重", 130, 230, 1, 0);
                 dialog.setUint("cm");
                 dialog.show();
             }
