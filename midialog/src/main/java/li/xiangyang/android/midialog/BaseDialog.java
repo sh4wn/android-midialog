@@ -13,19 +13,22 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import java.lang.ref.WeakReference;
+
 /**
  * Created by bac on 16/5/9.
  */
 abstract class BaseDialog {
 
-    protected Context context;
+    protected WeakReference<Context> context;
     protected Dialog dialog;
 
     private View contentView;
     private boolean cancelable = true;
 
     protected BaseDialog(Context context, int layoutId) {
-        this.context = context;
+        this.context = new WeakReference<>(context);
+
         dialog = new Dialog(context, R.style.DialogTheme);
         contentView = dialog.getLayoutInflater().inflate(layoutId, null);
         dialog.setContentView(contentView);
@@ -88,10 +91,15 @@ abstract class BaseDialog {
 
     protected float dp2px(float dp) {
         if (displayDensity == 0) {
-            displayDensity = context.getResources().getDisplayMetrics().density;
+            if (context.get() != null) {
+                displayDensity = context.get().getResources().getDisplayMetrics().density;
+            }
         }
         return (dp * displayDensity + 0.1f);
     }
 
+    protected Context getContext() {
+        return context.get();
+    }
 
 }
