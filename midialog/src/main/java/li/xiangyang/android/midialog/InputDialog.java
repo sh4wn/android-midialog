@@ -43,6 +43,7 @@ public class InputDialog extends BaseDialog {
     public void setText(String txt) {
         if (txt != null) {
             txtInput.setText(txt);
+            txtInput.setSelection(txt.length());
         }
     }
 

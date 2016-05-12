@@ -36,7 +36,10 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btnInput).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new InputDialog(MainActivity.this).show();
+                InputDialog dialog=new InputDialog(MainActivity.this);
+
+                dialog.setText("bac");
+                dialog.show();
             }
         });
         findViewById(R.id.btnGender).setOnClickListener(new View.OnClickListener() {
