@@ -58,7 +58,7 @@
                             android:layout_height="16dp"
                             android:layout_centerInParent="true"
                             android:gravity="top"
-                            android:paddingLeft="60dp"
+                            android:paddingLeft="80dp"
                             android:text="年"
                             android:textColor="#FF6A00"
                             android:textSize="8sp" />
@@ -89,7 +89,7 @@
                             android:layout_height="16dp"
                             android:layout_centerInParent="true"
                             android:gravity="top"
-                            android:paddingLeft="40dp"
+                            android:paddingLeft="60dp"
                             android:text="月"
                             android:textColor="#FF6A00"
                             android:textSize="8sp" />
@@ -120,7 +120,7 @@
                             android:layout_height="16dp"
                             android:layout_centerInParent="true"
                             android:gravity="top"
-                            android:paddingLeft="40dp"
+                            android:paddingLeft="60dp"
                             android:text="日"
                             android:textColor="#FF6A00"
                             android:textSize="8sp" />
