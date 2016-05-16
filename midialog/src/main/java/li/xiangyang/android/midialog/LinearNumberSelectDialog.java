@@ -14,6 +14,22 @@ public class LinearNumberSelectDialog extends SelectDialog {
     private List<String> items = new ArrayList<>();
 
     public LinearNumberSelectDialog(Context context, IListener lis, String title, String uint, int start, int end, int step, int selection) {
+        this(context, lis, title, uint, start, end, step, "%0f", selection);
+    }
+
+    /**
+     *
+     * @param context
+     * @param lis
+     * @param title
+     * @param uint
+     * @param start
+     * @param end
+     * @param step
+     * @param format ""
+     * @param selection
+     */
+    public LinearNumberSelectDialog(Context context, IListener lis, String title, String uint, float start, float end, float step, String format, int selection) {
         super(context, null, title, uint);
         this.listener = lis;
         super.setListener(new SelectDialog.IListener() {
@@ -31,8 +47,8 @@ public class LinearNumberSelectDialog extends SelectDialog {
                 }
             }
         });
-        for (int i = start; i < end; i += step) {
-            items.add(i + "");
+        for (float i = start; i < end; i += step) {
+            items.add(String.format(format, i));
         }
         super.setItems(items, selection);
     }
