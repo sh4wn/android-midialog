@@ -22,6 +22,8 @@ public class BouncingListView extends ListView {
         super(context, attrs, defStyleAttr);
     }
 
+    private boolean scrolling=false;
+
     public BouncingListView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
@@ -45,6 +47,10 @@ public class BouncingListView extends ListView {
                         listener.onChange(BouncingListView.this, selection);
                     }
                     setSelection(selection);
+
+                    scrolling=false;
+                }else if (i == OnScrollListener.SCROLL_STATE_TOUCH_SCROLL){
+                    scrolling=true;
                 }
             }
 
@@ -68,5 +74,7 @@ public class BouncingListView extends ListView {
         void onChange(BouncingListView listView, int selection);
     }
 
-
+    public boolean isScrolling() {
+        return scrolling;
+    }
 }

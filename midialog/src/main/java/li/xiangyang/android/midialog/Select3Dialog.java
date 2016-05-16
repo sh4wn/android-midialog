@@ -105,7 +105,7 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
     }
 
     public void setItems(List<String> sources, int selection) {
-        if (sources==null || sources.size()==0){
+        if (sources == null || sources.size() == 0) {
             listFirst.setVisibility(View.GONE);
             return;
         }
@@ -127,7 +127,7 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
 
     public void setItems2(List<String> sources, int selection) {
 
-        if (sources==null || sources.size()==0){
+        if (sources == null || sources.size() == 0) {
             listSecond.setVisibility(View.GONE);
             findViewById(R.id.lineSecond).setVisibility(View.GONE);
             findViewById(R.id.rlSecond).setVisibility(View.GONE);
@@ -151,7 +151,7 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
     }
 
     public void setItems3(List<String> sources, int selection) {
-        if (sources==null || sources.size()==0){
+        if (sources == null || sources.size() == 0) {
             listThird.setVisibility(View.GONE);
             findViewById(R.id.lineThird).setVisibility(View.GONE);
             findViewById(R.id.rlThird).setVisibility(View.GONE);
@@ -185,14 +185,16 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
         final View.OnClickListener lis = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (view.getId() == R.id.btnLeft) {
-                    onCancel();
-                } else {
-                    if (listener != null) {
-                        listener.onDone(firstSelection, secondSelectin, thirdSelelction);
+                if (!listFirst.isScrolling() && !listSecond.isScrolling() && !listThird.isScrolling()) {
+                    if (view.getId() == R.id.btnLeft) {
+                        onCancel();
+                    } else {
+                        if (listener != null) {
+                            listener.onDone(firstSelection, secondSelectin, thirdSelelction);
+                        }
                     }
+                    dismiss();
                 }
-                dismiss();
             }
         };
         findViewById(R.id.btnLeft).setOnClickListener(lis);
