@@ -14,7 +14,7 @@ public class LinearNumberSelectDialog extends SelectDialog {
     private List<String> items = new ArrayList<>();
 
     public LinearNumberSelectDialog(Context context, IListener lis, String title, String uint, int start, int end, int step, int selection) {
-        this(context, lis, title, uint, start, end, step, "%0f", selection);
+        this(context, lis, title, uint, start, end, step, "%.0f", selection);
     }
 
     /**
