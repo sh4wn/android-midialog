@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onDone(int number) {
+                    public void onDone(Number number) {
                         Toast.makeText(MainActivity.this, "" + number, Toast.LENGTH_SHORT).show();
                     }
                 }, "体重", "千克", 130, 230, 1, 0);
