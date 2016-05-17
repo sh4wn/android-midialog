@@ -55,14 +55,14 @@ public class MainActivity extends AppCompatActivity {
                     public void onSelected(int index, String option) {
 
                     }
-                }, "性别", 0, "男", "女").show();
+                }, getString(R.string.gender), 0, getString(R.string.male), getString(R.string.female)).show();
             }
         });
 
         findViewById(R.id.btnConfirm).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new ConfirmDialog(MainActivity.this, null, "确认", "确认吗").show();
+                new ConfirmDialog(MainActivity.this, null, getString(R.string.confirm), getString(R.string.areyousure)).show();
             }
         });
 
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
                         Toast.makeText(MainActivity.this, "" + year + ":" + month + ":" + day, Toast.LENGTH_SHORT).show();
                     }
-                }, "出生日期", year, month, day).show();
+                }, getString(R.string.birthday), year, month, day).show();
             }
         });
 
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onDone(Number number) {
                         Toast.makeText(MainActivity.this, "" + number, Toast.LENGTH_SHORT).show();
                     }
-                }, "体重", "千克", 130, 230, 1, 0);
+                }, getString(R.string.weight), getString(R.string.kg), 130, 230, 1, 0);
                 dialog.show();
             }
         });
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onDone() {
 
                     }
-                }, "提示", "这是提示");
+                }, getString(R.string.alert), getString(R.string.thisisaalert));
                 dialog.show();
             }
         });

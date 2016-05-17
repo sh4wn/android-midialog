@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gender">性别</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
+    <string name="confirm">确认</string>
+    <string name="areyousure">确认吗</string>
+    <string name="birthday">出生日期</string>
+    <string name="weight">体重</string>
+    <string name="kg">千克</string>
+    <string name="alert">提示</string>
+    <string name="thisisaalert">这是提示</string>
+</resources>

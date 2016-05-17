@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">MiDialog</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="confirm">Confirm</string>
+    <string name="areyousure">Are you sure?</string>
+    <string name="birthday">Birthday</string>
+    <string name="weight">Weight</string>
+    <string name="kg">kg</string>
+    <string name="alert">Alert</string>
+    <string name="thisisaalert">This is a alert!</string>
 </resources>
