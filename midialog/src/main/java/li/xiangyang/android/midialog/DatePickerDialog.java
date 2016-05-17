@@ -3,6 +3,7 @@ package li.xiangyang.android.midialog;
 import android.content.Context;
 import android.content.Intent;
 
+import java.text.DateFormatSymbols;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -39,7 +40,7 @@ public class DatePickerDialog extends Select3Dialog {
                     currentYear = Integer.parseInt(years.get(selection));
                     initDays();
                 } else if (index == 2) {
-                    currentMonth = Integer.parseInt(months.get(selection));
+                    currentMonth = selection + 1;
                     initDays();
 
                 } else if (index == 3) {
@@ -50,7 +51,7 @@ public class DatePickerDialog extends Select3Dialog {
             @Override
             public void onDone(int first, int second, int third) {
                 if (listener != null) {
-                    listener.onDone(Integer.parseInt(years.get(first)), Integer.parseInt(months.get(second)), Integer.parseInt(days.get(third)));
+                    listener.onDone(Integer.parseInt(years.get(first)), second + 1, Integer.parseInt(days.get(third)));
                 }
             }
         });
@@ -60,17 +61,26 @@ public class DatePickerDialog extends Select3Dialog {
             years.add(i + "");
         }
 
-        for (int i = 1; i <= 12; i++) {
-            months.add(digitalString(i));
+        DateFormatSymbols dfs = new DateFormatSymbols();
+        String[] monthSymbols = dfs.getShortMonths();
+
+        for (int i = 0; i < 12; i++) {
+            months.add(formatChineseMonth(monthSymbols[i]));
         }
 
         setItems(years, years.indexOf(digitalString(currentYear)));
-        setItems2(months, months.indexOf(digitalString(currentMonth)));
+        setItems2(months, currentMonth - 1);
         initDays();
 
-        setUints("年", "月", "日");
+        setUints(context.getString(R.string.uint_year), context.getString(R.string.uint_month), context.getString(R.string.uint_day));
     }
 
+    private String formatChineseMonth(String month) {
+        if (month.endsWith("月")) {
+            month = month.replace("月", "");
+        }
+        return month;
+    }
 
     private String digitalString(int digital) {
         if (digital < 10) {
@@ -110,9 +120,9 @@ public class DatePickerDialog extends Select3Dialog {
             days.add(digitalString(i));
         }
         int selection = days.indexOf(digitalString(currentDay));
-        selection=selection > 0 ? selection : days.size()-1;
-        setItems3(days,selection);
-        currentDay= Integer.parseInt(days.get(selection));
+        selection = selection > 0 ? selection : days.size() - 1;
+        setItems3(days, selection);
+        currentDay = Integer.parseInt(days.get(selection));
     }
 
     public static interface IListener {

@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">MiDialog</string>
+    <string name="done">Done</string>
+    <string name="cancel">Cancel</string>
+    <string name="uint_year"> </string>
+    <string name="uint_month"> </string>
+    <string name="uint_day"> </string>
+    <string name="alert">Alert</string>
+    <string name="message">Message</string>
+    <string name="input_content">Input Content</string>
+    <string name="choice_one">Choice</string>
+    <string name="title">Title</string>
+    <string name="option">Option</string>
 </resources>

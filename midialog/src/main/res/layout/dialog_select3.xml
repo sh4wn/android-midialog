@@ -26,7 +26,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="22dp"
                 android:layout_marginTop="24dp"
-                android:text="标题"
+                android:text="@string/title"
                 android:textColor="#444444"
                 android:textSize="15dp" />
 
@@ -59,7 +59,7 @@
                             android:layout_centerInParent="true"
                             android:gravity="top"
                             android:paddingLeft="80dp"
-                            android:text="年"
+                            android:text="@string/uint_year"
                             android:textColor="#FF6A00"
                             android:textSize="8sp" />
                     </RelativeLayout>
@@ -90,7 +90,7 @@
                             android:layout_centerInParent="true"
                             android:gravity="top"
                             android:paddingLeft="60dp"
-                            android:text="月"
+                            android:text="@string/uint_month"
                             android:textColor="#FF6A00"
                             android:textSize="8sp" />
                     </RelativeLayout>
@@ -121,7 +121,7 @@
                             android:layout_centerInParent="true"
                             android:gravity="top"
                             android:paddingLeft="60dp"
-                            android:text="日"
+                            android:text="@string/uint_day"
                             android:textColor="#FF6A00"
                             android:textSize="8sp" />
                     </RelativeLayout>
@@ -150,7 +150,7 @@
                     android:layout_height="40dp"
                     android:background="@drawable/button_left"
                     android:gravity="center"
-                    android:text="取消"
+                    android:text="@string/cancel"
                     android:textColor="#737373"
                     android:textSize="13dp" />
 
@@ -161,7 +161,7 @@
                     android:layout_toRightOf="@+id/btnLeft"
                     android:background="@drawable/button_right"
                     android:gravity="center"
-                    android:text="确定"
+                    android:text="@string/done"
                     android:textColor="#737373"
                     android:textSize="13dp" />
             </LinearLayout>

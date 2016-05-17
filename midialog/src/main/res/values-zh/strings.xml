@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="done">确定</string>
+    <string name="cancel">取消</string>
+    <string name="uint_year">年</string>
+    <string name="uint_month">月</string>
+    <string name="uint_day">日</string>
+    <string name="alert">提示</string>
+    <string name="message">信息</string>
+    <string name="input_content">输入内容</string>
+    <string name="choice_one">选择</string>
+    <string name="progressing">正在处理中...</string>
+    <string name="title">标题</string>
+    <string name="option">选项</string>
+</resources>

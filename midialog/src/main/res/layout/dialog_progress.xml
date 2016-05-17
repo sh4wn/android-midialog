@@ -29,6 +29,6 @@
             android:layout_marginLeft="57dp"
             android:textSize="13dp"
             android:textColor="#717171"
-            android:text="正在处理中..."/>
+            android:text="@string/progressing"/>
     </RelativeLayout>
 </RelativeLayout>
