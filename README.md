@@ -8,6 +8,6 @@ MIUI风格的Dialog
 - 选项选择(性别)
 
 ### 使用方式
-gradle:
+#### gradle:
 >    compile 'li.xiangyang.android:midialog:0.9.1@aar'
 		
