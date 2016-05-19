@@ -19,7 +19,7 @@ public class AlertDialog extends BaseDialog {
     }
 
     public AlertDialog(Context context, IListener listener, String title, String message) {
-        super(context, R.layout.dialog_alert);
+        super(context, R.layout.midialog_alert);
         this.listener = listener;
 
         txtMessage = (TextView) findViewById(R.id.txtMessage);

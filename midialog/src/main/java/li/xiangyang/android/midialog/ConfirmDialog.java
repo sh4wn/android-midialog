@@ -2,10 +2,7 @@ package li.xiangyang.android.midialog;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 /**
  * Created by bac on 16/5/9.
@@ -22,7 +19,7 @@ public class ConfirmDialog extends BaseDialog {
     }
 
     public ConfirmDialog(Context context, IListener listener, String title, String message) {
-        super(context, R.layout.dialog_confirm);
+        super(context, R.layout.midialog_confirm);
         this.listener = listener;
 
         txtMessage = (TextView) findViewById(R.id.txtMessage);

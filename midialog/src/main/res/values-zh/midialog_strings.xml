@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="midialog_done">确定</string>
+    <string name="midialog_cancel">取消</string>
+    <string name="midialog_uint_year">年</string>
+    <string name="midialog_uint_month">月</string>
+    <string name="midialog_uint_day">日</string>
+    <string name="midialog_alert">提示</string>
+    <string name="midialog_message">信息</string>
+    <string name="midialog_input_content">输入内容</string>
+    <string name="midialog_choice_one">选择</string>
+    <string name="progressing">正在处理中...</string>
+    <string name="midialog_title">标题</string>
+    <string name="midialog_option">选项</string>
+</resources>

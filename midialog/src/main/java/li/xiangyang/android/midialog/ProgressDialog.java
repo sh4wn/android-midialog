@@ -17,7 +17,7 @@ public class ProgressDialog extends BaseDialog {
     }
 
     public ProgressDialog(Context context, String progressStr) {
-        super(context, R.layout.dialog_progress);
+        super(context, R.layout.midialog_progress);
         txtProgress = (TextView) dialog.findViewById(R.id.txtProgress);
         findViewById(R.id.box).setClickable(true);
         setProgressString(progressStr);

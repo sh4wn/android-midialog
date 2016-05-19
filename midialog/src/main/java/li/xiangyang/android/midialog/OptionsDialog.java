@@ -34,14 +34,14 @@ public class OptionsDialog extends BaseDialog implements CommonListAdapter.ViewF
     }
 
     public OptionsDialog(Context context, final IListener listener, String title, int selected, String... options) {
-        super(context, R.layout.dialog_options);
+        super(context, R.layout.midialog_options);
 
         this.listener = listener;
         this.selected = selected;
         listView = (ListView) findViewById(R.id.listView);
         titleView = (TextView) findViewById(R.id.txtTitle);
         items = Arrays.asList(options);
-        listView.setAdapter(new CommonListAdapter<String>(context, items, null, R.layout.item_option, 0, this));
+        listView.setAdapter(new CommonListAdapter<String>(context, items, null, R.layout.midialog_item_option, 0, this));
         setTitle(title);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

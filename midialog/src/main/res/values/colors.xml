@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="options_pressed">#90EEEEEE</color>
-    <color name="options_normal">#ffffff</color>
+    <color name="midialog_options_pressed">#90EEEEEE</color>
+    <color name="midialog_options_normal">#ffffff</color>
 </resources>

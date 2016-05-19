@@ -1,7 +1,6 @@
 package li.xiangyang.android.midialog;
 
 import android.content.Context;
-import android.content.Intent;
 
 import java.text.DateFormatSymbols;
 import java.util.ArrayList;
@@ -72,7 +71,7 @@ public class DatePickerDialog extends Select3Dialog {
         setItems2(months, currentMonth - 1);
         initDays();
 
-        setUints(context.getString(R.string.uint_year), context.getString(R.string.uint_month), context.getString(R.string.uint_day));
+        setUints(context.getString(R.string.midialog_uint_year), context.getString(R.string.midialog_uint_month), context.getString(R.string.midialog_uint_day));
     }
 
     private String formatChineseMonth(String month) {

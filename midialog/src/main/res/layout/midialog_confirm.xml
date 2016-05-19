@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/alert"
+                android:text="@string/midialog_alert"
                 android:id="@+id/txtTitle"
                 android:layout_centerHorizontal="true"
                 android:textSize="15dp"
@@ -36,7 +36,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/message"
+                android:text="@string/midialog_message"
                 android:id="@+id/txtMessage"
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
@@ -58,21 +58,21 @@
                     android:layout_width="157dp"
                     android:layout_height="40dp"
                     android:id="@+id/btnLeft"
-                    android:text="@string/cancel"
+                    android:text="@string/midialog_cancel"
                     android:gravity="center"
                     android:textColor="#737373"
                     android:textSize="13dp"
-                    android:background="@drawable/button_left" />
+                    android:background="@drawable/midialog_button_left" />
                 <li.xiangyang.android.touchable_controls.TouchableTextView
                     android:layout_width="157dp"
                     android:layout_height="40dp"
                     android:id="@+id/btnRight"
-                    android:text="@string/done"
+                    android:text="@string/midialog_done"
                     android:layout_toRightOf="@+id/btnLeft"
                     android:gravity="center"
                     android:textColor="#737373"
                     android:textSize="13dp"
-                    android:background="@drawable/button_right" />
+                    android:background="@drawable/midialog_button_right" />
             </LinearLayout>
         </LinearLayout>
 

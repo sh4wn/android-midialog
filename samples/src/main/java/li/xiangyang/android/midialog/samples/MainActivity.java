@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onDone() {
 
                     }
-                }, getString(R.string.alert), getString(R.string.thisisaalert));
+                }, getString(R.string.midialog_alert), getString(R.string.thisisaalert));
                 dialog.show();
             }
         });

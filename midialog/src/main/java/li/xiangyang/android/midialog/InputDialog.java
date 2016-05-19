@@ -21,7 +21,7 @@ public class InputDialog extends BaseDialog {
     }
 
     public InputDialog(Context context, IListener listener, String title, String defaultText, String hint) {
-        super(context, R.layout.dialog_input_one);
+        super(context, R.layout.midialog_input_one);
         this.listener = listener;
 
         txtInput = (EditText) findViewById(R.id.txtInput);

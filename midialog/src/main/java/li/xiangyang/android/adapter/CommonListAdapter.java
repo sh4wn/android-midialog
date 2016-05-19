@@ -57,13 +57,13 @@ public class CommonListAdapter<T> extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         boolean group = splitItems != null && splitItems.contains((long) position);
-        if (convertView == null || !Boolean.valueOf(group).equals(convertView.getTag(R.layout.list_group_header))) {
+        if (convertView == null || !Boolean.valueOf(group).equals(convertView.getTag(R.layout.midialog_list_group_header))) {
             if (group) {
                 convertView = LayoutInflater.from(cxt).inflate(groupLayoutResId, parent, false);
-                convertView.setTag(R.layout.list_group_header, true);
+                convertView.setTag(R.layout.midialog_list_group_header, true);
             } else {
                 convertView = LayoutInflater.from(cxt).inflate(itemLayoutResId, parent, false);
-                convertView.setTag(R.layout.list_group_header, false);
+                convertView.setTag(R.layout.midialog_list_group_header, false);
             }
         }
         formater.get().formatItemView(this, items.get(position), convertView, position, group);

@@ -5,7 +5,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import li.xiangyang.android.adapter.CommonListAdapter;
@@ -37,7 +36,7 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
     private int thirdSelelction;
 
     public Select3Dialog(Context context, IListener listener, String title) {
-        super(context, R.layout.dialog_select3);
+        super(context, R.layout.midialog_select3);
         this.listener = listener;
 
         txtTitle = (TextView) findViewById(R.id.txtTitle);
@@ -118,7 +117,7 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
         items.add(0, "");
         items.add("");
         items.add("");
-        adapterFirst = new CommonListAdapter<String>(getContext(), itemsFirst, null, R.layout.item_select, 0, this);
+        adapterFirst = new CommonListAdapter<String>(getContext(), itemsFirst, null, R.layout.midialog_item_select, 0, this);
         listFirst.setVisibility(View.VISIBLE);
         listFirst.setItemHeight(dp2px(40));
         listFirst.setAdapter(adapterFirst);
@@ -143,7 +142,7 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
         items.add(0, "");
         items.add("");
         items.add("");
-        adapterSecond = new CommonListAdapter<String>(getContext(), itemsSecond, null, R.layout.item_select, 0, this);
+        adapterSecond = new CommonListAdapter<String>(getContext(), itemsSecond, null, R.layout.midialog_item_select, 0, this);
         listSecond.setVisibility(View.VISIBLE);
         listSecond.setItemHeight(dp2px(40));
         listSecond.setAdapter(adapterSecond);
@@ -167,7 +166,7 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
         items.add(0, "");
         items.add("");
         items.add("");
-        adapterThird = new CommonListAdapter<String>(getContext(), itemsThird, null, R.layout.item_select, 0, this);
+        adapterThird = new CommonListAdapter<String>(getContext(), itemsThird, null, R.layout.midialog_item_select, 0, this);
         listThird.setVisibility(View.VISIBLE);
         listThird.setItemHeight(dp2px(40));
         listThird.setAdapter(adapterThird);

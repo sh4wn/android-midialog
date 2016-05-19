@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MiDialog</string>
+    <string name="midialog_done">Done</string>
+    <string name="midialog_cancel">Cancel</string>
+    <string name="midialog_uint_year"> </string>
+    <string name="midialog_uint_month"> </string>
+    <string name="midialog_uint_day"> </string>
+    <string name="midialog_alert">Alert</string>
+    <string name="midialog_message">Message</string>
+    <string name="midialog_input_content">Input Content</string>
+    <string name="midialog_choice_one">Choice</string>
+    <string name="midialog_title">Title</string>
+    <string name="midialog_option">Option</string>
+</resources>
