@@ -108,8 +108,10 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
             listFirst.setVisibility(View.GONE);
             return;
         }
-        if (selection < 0 || selection >= sources.size()) {
+        if (selection < 0) {
             selection = 0;
+        } else if (selection >= sources.size()) {
+            selection = sources.size() - 1;
         }
 
         List<String> items = new ArrayList<>(sources.size() + 4);
@@ -136,8 +138,10 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
             findViewById(R.id.rlSecond).setVisibility(View.GONE);
             return;
         }
-        if (selection < 0 || selection >= sources.size()) {
+        if (selection < 0) {
             selection = 0;
+        } else if (selection >= sources.size()) {
+            selection = sources.size() - 1;
         }
         List<String> items = new ArrayList<>(sources.size() + 4);
         items.addAll(sources);
@@ -164,8 +168,10 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
             return;
         }
 
-        if (selection < 0 || selection >= sources.size()) {
+        if (selection < 0) {
             selection = 0;
+        } else if (selection >= sources.size()) {
+            selection = sources.size() - 1;
         }
 
         List<String> items = new ArrayList<>(sources.size() + 4);
