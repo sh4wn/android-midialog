@@ -28,7 +28,6 @@ dependencies {
     compile 'li.xiangyang.android:touchable-controls:0.2'
 }
 
-
 // Bintray upload
 
 apply plugin: 'com.jfrog.bintray'
@@ -36,13 +35,12 @@ apply plugin: 'com.github.dcendents.android-maven'
 
 
 group = "li.xiangyang.android"
-version = "0.9.9"
+version = "0.9.10"
 
 def siteUrl = 'https://github.com/backav/android-midialog'    // project homepage
 def gitUrl = 'https://github.com/backav/android-midialog.git' // project git
 def pkgName = 'android-midialog'
 def pkgDesc = "MIUI style sialog for Android"
-
 
 // 根节点添加
 install {

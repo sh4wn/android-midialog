@@ -56,7 +56,7 @@ public class DatePickerDialog extends Select3Dialog {
         });
 
         int thisYear = Calendar.getInstance().get(Calendar.YEAR);
-        for (int i = thisYear - 80; i <= thisYear; i++) {
+        for (int i = thisYear - 100; i <= thisYear; i++) {
             years.add(i + "");
         }
 

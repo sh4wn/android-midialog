@@ -9,5 +9,5 @@ MIUI风格的Dialog
 
 ### 使用方式
 #### gradle:
->    compile 'li.xiangyang.android:midialog:0.9.1@aar'
+>    compile 'li.xiangyang.android:midialog:0.9.9@aar'
 		
