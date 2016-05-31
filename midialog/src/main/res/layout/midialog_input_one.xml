@@ -25,7 +25,8 @@
 
         <EditText
             android:paddingLeft="5dp"
-            android:layout_width="314dp"
+            android:paddingRight="10dp"
+            android:layout_width="300dp"
             android:layout_height="33dp"
             android:id="@+id/txtInput"
             android:textSize="12dp"

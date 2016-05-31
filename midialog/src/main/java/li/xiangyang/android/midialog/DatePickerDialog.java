@@ -119,7 +119,7 @@ public class DatePickerDialog extends Select3Dialog {
             days.add(digitalString(i));
         }
         int selection = days.indexOf(digitalString(currentDay));
-        selection = selection > 0 ? selection : days.size() - 1;
+        selection = selection >= 0 ? selection : days.size() - 1;
         setItems3(days, selection);
         currentDay = Integer.parseInt(days.get(selection));
     }
