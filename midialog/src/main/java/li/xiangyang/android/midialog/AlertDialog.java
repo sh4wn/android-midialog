@@ -11,6 +11,7 @@ public class AlertDialog extends BaseDialog {
 
     private TextView txtMessage;
     private TextView txtTitle;
+    private TextView btnSure;
 
     private IListener listener;
 
@@ -24,6 +25,7 @@ public class AlertDialog extends BaseDialog {
 
         txtMessage = (TextView) findViewById(R.id.txtMessage);
         txtTitle = (TextView) findViewById(R.id.txtTitle);
+        btnSure = (TextView) findViewById(R.id.btnSure);
         setTitle(title);
         setMessage(message);
 
@@ -31,10 +33,14 @@ public class AlertDialog extends BaseDialog {
     }
 
 
-    private void setTitle(String title) {
+    public void setTitle(String title) {
         if (title != null) {
             txtTitle.setText(title);
         }
+    }
+
+    public void setButtonText(String text) {
+        btnSure.setText(text);
     }
 
     public void setMessage(String txt) {

@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btnProgress).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ProgressDialog dialog=new ProgressDialog(MainActivity.this);
+                ProgressDialog dialog = new ProgressDialog(MainActivity.this);
                 dialog.setCancelable(true);
                 dialog.show();
             }
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btnInput).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                InputDialog dialog=new InputDialog(MainActivity.this);
+                InputDialog dialog = new InputDialog(MainActivity.this);
 
                 dialog.setText("bac");
                 dialog.show();
@@ -62,7 +62,9 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btnConfirm).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new ConfirmDialog(MainActivity.this, null, getString(R.string.confirm), getString(R.string.areyousure)).show();
+                ConfirmDialog dialog = new ConfirmDialog(MainActivity.this, null, getString(R.string.confirm), getString(R.string.areyousure));
+                dialog.setButtonText("Not Sure", "Sure");
+                dialog.show();
             }
         });
 
@@ -117,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 }, getString(R.string.midialog_alert), getString(R.string.thisisaalert));
+                dialog.setButtonText("OK");
                 dialog.show();
             }
         });

@@ -11,6 +11,8 @@ public class ConfirmDialog extends BaseDialog {
 
     private TextView txtMessage;
     private TextView txtTitle;
+    private TextView btnLeft;
+    private TextView btnRight;
 
     private IListener listener;
 
@@ -24,6 +26,8 @@ public class ConfirmDialog extends BaseDialog {
 
         txtMessage = (TextView) findViewById(R.id.txtMessage);
         txtTitle = (TextView) findViewById(R.id.txtTitle);
+        btnLeft= (TextView) findViewById(R.id.btnLeft);
+        btnRight= (TextView) findViewById(R.id.btnRight);
         setTitle(title);
         setMessage(message);
 
@@ -31,7 +35,7 @@ public class ConfirmDialog extends BaseDialog {
     }
 
 
-    private void setTitle(String title) {
+    public void setTitle(String title) {
         if (title != null) {
             txtTitle.setText(title);
         }
@@ -41,6 +45,11 @@ public class ConfirmDialog extends BaseDialog {
         if (txt != null) {
             txtMessage.setText(txt);
         }
+    }
+
+    public void setButtonText(String cancel, String sure) {
+        btnLeft.setText(cancel);
+        btnRight.setText(sure);
     }
 
     public void setListener(IListener listener) {
