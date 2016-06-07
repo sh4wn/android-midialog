@@ -67,4 +67,12 @@
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2列选择框"
+        android:id="@+id/btnSelect2"
+        android:layout_alignBottom="@+id/btnAlert"
+        android:layout_alignStart="@+id/btnSelect3" />
+
 </RelativeLayout>

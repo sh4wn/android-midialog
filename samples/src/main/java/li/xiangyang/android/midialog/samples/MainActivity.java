@@ -3,16 +3,21 @@ package li.xiangyang.android.midialog.samples;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.NumberPicker;
 import android.widget.Toast;
 
+
+import java.util.Arrays;
 
 import li.xiangyang.android.midialog.AlertDialog;
 import li.xiangyang.android.midialog.ConfirmDialog;
 import li.xiangyang.android.midialog.DatePickerDialog;
 import li.xiangyang.android.midialog.InputDialog;
+import li.xiangyang.android.midialog.LinearNumberSelect2Dialog;
 import li.xiangyang.android.midialog.LinearNumberSelectDialog;
 import li.xiangyang.android.midialog.OptionsDialog;
 import li.xiangyang.android.midialog.ProgressDialog;
+import li.xiangyang.android.midialog.Select2Dialog;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -123,5 +128,31 @@ public class MainActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
+
+        findViewById(R.id.btnSelect2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LinearNumberSelect2Dialog dialog = new LinearNumberSelect2Dialog(MainActivity.this, new LinearNumberSelect2Dialog.IListener() {
+                    @Override
+                    public void onCancel() {
+
+                    }
+
+                    @Override
+                    public void onChange(boolean left, int selection) {
+
+                    }
+
+                    @Override
+                    public void onDone(Number number, Number right) {
+
+                    }
+                }, "体重");
+                dialog.setLeft("", 20, 200, 1, 0);
+                dialog.setRight("kg", ".%.0f", 0f, 10f, 1f, 0);
+                dialog.show();
+            }
+        });
+
     }
 }
