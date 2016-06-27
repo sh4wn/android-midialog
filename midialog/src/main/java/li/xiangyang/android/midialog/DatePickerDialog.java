@@ -77,6 +77,9 @@ public class DatePickerDialog extends Select3Dialog {
     private String formatChineseMonth(String month) {
         if (month.endsWith("月")) {
             month = month.replace("月", "");
+            if (month.length() < 2) {
+                month = "0" + month;
+            }
         }
         return month;
     }
