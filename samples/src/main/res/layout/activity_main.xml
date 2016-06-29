@@ -30,10 +30,7 @@
         tools:layout_editor_absoluteWidth="88dp"
         tools:layout_editor_absoluteHeight="48dp"
         app:layout_constraintLeft_toLeftOf="@+id/btnSelect"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintTop_toTopOf="@+id/btnSelect3"
-        app:layout_constraintRight_toRightOf="@+id/btnSelect"
-        tools:layout_constraintRight_creator="1" />
+        app:layout_constraintTop_toTopOf="@+id/btnSelect3" />
 
     <Button
         android:layout_width="wrap_content"
@@ -44,6 +41,7 @@
         tools:layout_editor_absoluteHeight="48dp"
         app:layout_constraintLeft_toLeftOf="@+id/btnConfirm"
         app:layout_constraintTop_toBottomOf="@+id/btnConfirm"
+        android:layout_marginTop="32dp"
         tools:layout_constraintTop_creator="1"
         app:layout_constraintRight_toRightOf="@+id/btnConfirm"
         app:layout_constraintHorizontal_bias="1.0" />
@@ -88,11 +86,8 @@
         tools:layout_editor_absoluteWidth="88dp"
         tools:layout_editor_absoluteHeight="48dp"
         app:layout_constraintLeft_toLeftOf="@+id/btnProgress"
-        tools:layout_constraintLeft_creator="1"
         app:layout_constraintTop_toTopOf="@+id/btnGender"
         tools:layout_constraintTop_creator="1"
-        app:layout_constraintRight_toRightOf="@+id/btnProgress"
-        tools:layout_constraintRight_creator="1"
         app:layout_constraintBottom_toBottomOf="@+id/btnGender"
         tools:layout_constraintBottom_creator="1" />
 
