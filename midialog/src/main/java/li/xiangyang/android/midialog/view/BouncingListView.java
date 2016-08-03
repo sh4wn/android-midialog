@@ -2,6 +2,7 @@ package li.xiangyang.android.midialog.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ListView;
 
@@ -22,7 +23,7 @@ public class BouncingListView extends ListView {
         super(context, attrs, defStyleAttr);
     }
 
-    private boolean scrolling=false;
+    private boolean scrolling = false;
 
     public BouncingListView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -36,21 +37,23 @@ public class BouncingListView extends ListView {
             @Override
             public void onScrollStateChanged(AbsListView absListView, int i) {
                 if (i == OnScrollListener.SCROLL_STATE_IDLE) {
-                    int top = getChildAt(0).getTop();
-                    int selection;
-                    if (Math.abs(top) > itemHeight / 2) {
-                        selection = mFirstVisibleItem + 1;
-                    } else {
-                        selection = mFirstVisibleItem;
+                    View firstChild = getChildAt(0);
+                    if (firstChild != null) {
+                        int top = firstChild.getTop();
+                        int selection;
+                        if (Math.abs(top) > itemHeight / 2) {
+                            selection = mFirstVisibleItem + 1;
+                        } else {
+                            selection = mFirstVisibleItem;
+                        }
+                        if (listener != null) {
+                            listener.onChange(BouncingListView.this, selection);
+                        }
+                        setSelection(selection);
                     }
-                    if (listener != null) {
-                        listener.onChange(BouncingListView.this, selection);
-                    }
-                    setSelection(selection);
-
-                    scrolling=false;
-                }else if (i == OnScrollListener.SCROLL_STATE_TOUCH_SCROLL){
-                    scrolling=true;
+                    scrolling = false;
+                } else if (i == OnScrollListener.SCROLL_STATE_TOUCH_SCROLL) {
+                    scrolling = true;
                 }
             }
 
