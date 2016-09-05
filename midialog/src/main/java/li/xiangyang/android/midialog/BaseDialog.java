@@ -49,7 +49,11 @@ abstract class BaseDialog {
     }
 
     public void dismiss() {
-        dialog.dismiss();
+        try {
+            dialog.dismiss();
+        } catch (Exception ex) {
+
+        }
     }
 
     public boolean isCancelable() {
