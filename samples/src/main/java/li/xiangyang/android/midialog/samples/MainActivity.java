@@ -3,6 +3,7 @@ package li.xiangyang.android.midialog.samples;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.NumberPicker;
 import android.widget.Toast;
 
@@ -125,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }, getString(R.string.midialog_alert), getString(R.string.thisisaalert));
                 dialog.setButtonText("OK");
+                dialog.setWindowType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
                 dialog.show();
             }
         });

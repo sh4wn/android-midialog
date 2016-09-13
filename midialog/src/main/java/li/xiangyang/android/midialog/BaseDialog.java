@@ -1,16 +1,12 @@
 package li.xiangyang.android.midialog;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.WallpaperInfo;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.KeyEvent;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 
 import java.lang.ref.WeakReference;
@@ -34,7 +30,6 @@ abstract class BaseDialog {
         dialog.setContentView(contentView);
         dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
-
         initEvents();
     }
 
@@ -62,6 +57,10 @@ abstract class BaseDialog {
 
     public void setCancelable(boolean cancelable) {
         this.cancelable = cancelable;
+    }
+
+    public void setWindowType(int type) {
+        dialog.getWindow().setType(type);
     }
 
     private void initEvents() {
