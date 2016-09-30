@@ -37,6 +37,8 @@ public class Select2Dialog extends Select3Dialog {
         });
         this.setUints(unitLeft, unitRight, null);
         mListener = listener;
+        setItems(itemsLeft,0);
+        setItems2(itemsRight,0);
         setItems3(null,0);
     }
 
