@@ -2,7 +2,6 @@ package li.xiangyang.android.midialog;
 
 import android.content.Context;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**

@@ -1,6 +1,6 @@
 package li.xiangyang.android.midialog.samples;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 
 import java.util.Arrays;
+import java.util.Calendar;
 
 import li.xiangyang.android.midialog.AlertDialog;
 import li.xiangyang.android.midialog.ConfirmDialog;
@@ -20,7 +21,7 @@ import li.xiangyang.android.midialog.OptionsDialog;
 import li.xiangyang.android.midialog.ProgressDialog;
 import li.xiangyang.android.midialog.Select2Dialog;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     int year = 1991;
     int month = 2;
@@ -93,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
                         Toast.makeText(MainActivity.this, "" + year + ":" + month + ":" + day, Toast.LENGTH_SHORT).show();
                     }
-                }, getString(R.string.birthday), year, month, day).show();
+                }, getString(R.string.birthday), year, month, day, Calendar.getInstance().get(Calendar.YEAR)-6).show();
             }
         });
 

@@ -21,6 +21,10 @@ public class DatePickerDialog extends Select3Dialog {
     private int currentDay = 1;
 
     public DatePickerDialog(Context context, final IListener listener, String title, int year, final int month, int day) {
+        this(context,listener,title,year,month,day,Calendar.getInstance().get(Calendar.YEAR));
+    }
+
+    public DatePickerDialog(Context context, final IListener listener, String title, int year, final int month, int day,int maxYear) {
         super(context, null, title);
         currentYear = year;
         currentMonth = month;
@@ -55,8 +59,7 @@ public class DatePickerDialog extends Select3Dialog {
             }
         });
 
-        int thisYear = Calendar.getInstance().get(Calendar.YEAR);
-        for (int i = thisYear - 100; i <= thisYear; i++) {
+        for (int i = maxYear - 100; i <= maxYear; i++) {
             years.add(i + "");
         }
 
