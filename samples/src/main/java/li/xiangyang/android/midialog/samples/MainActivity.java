@@ -8,8 +8,10 @@ import android.widget.NumberPicker;
 import android.widget.Toast;
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.List;
 
 import li.xiangyang.android.midialog.AlertDialog;
 import li.xiangyang.android.midialog.ConfirmDialog;
@@ -135,24 +137,16 @@ public class MainActivity extends Activity {
         findViewById(R.id.btnSelect2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                LinearNumberSelect2Dialog dialog = new LinearNumberSelect2Dialog(MainActivity.this, new LinearNumberSelect2Dialog.IListener() {
-                    @Override
-                    public void onCancel() {
+                Select2Dialog dialog=new Select2Dialog(MainActivity.this,null,"2","","");
+                List<String> left=new ArrayList<String>();
+                left.add("福建");
 
-                    }
+                List<String> right=new ArrayList<String>();
+                right.add("福州");
+                right.add("厦门");
 
-                    @Override
-                    public void onChange(boolean left, int selection) {
-
-                    }
-
-                    @Override
-                    public void onDone(Number number, Number right) {
-
-                    }
-                }, "体重");
-                dialog.setLeft("", 20, 200, 1, 0);
-                dialog.setRight("kg", ".%.0f", 0f, 10f, 1f, 0);
+                dialog.setItems(left,0);
+                dialog.setItems2(right,0);
                 dialog.show();
             }
         });
