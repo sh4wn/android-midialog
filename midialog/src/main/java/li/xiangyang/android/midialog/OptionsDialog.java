@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -25,6 +26,7 @@ public class OptionsDialog extends BaseDialog implements CommonListAdapter.ViewF
     private int selected;
 
     private int selectedColor;
+    private int selectedArrowImage;
     private int defaultColor;
 
     private IListener listener;
@@ -34,6 +36,10 @@ public class OptionsDialog extends BaseDialog implements CommonListAdapter.ViewF
     }
 
     public OptionsDialog(Context context, final IListener listener, String title, int selected, String... options) {
+        this(context, listener, title, selected, Color.parseColor("#FF6A00"), R.drawable.midialog_option_selected, options);
+    }
+
+    public OptionsDialog(Context context, final IListener listener, String title, int selected, int tintColor, int selectedArrowImage, String... options) {
         super(context, R.layout.midialog_options);
 
         this.listener = listener;
@@ -54,8 +60,9 @@ public class OptionsDialog extends BaseDialog implements CommonListAdapter.ViewF
             }
         });
 
-        selectedColor = Color.parseColor("#FF6A00");
+        this.selectedArrowImage = selectedArrowImage;
         defaultColor = Color.parseColor("#333333");
+        selectedColor = tintColor;
     }
 
     private void setTitle(String title) {
@@ -72,10 +79,14 @@ public class OptionsDialog extends BaseDialog implements CommonListAdapter.ViewF
     }
 
     @Override
-    public void formatItemView(CommonListAdapter<String> adapter,String item, View view, int index, boolean group) {
+    public void formatItemView(CommonListAdapter<String> adapter, String item, View view, int index, boolean group) {
         TextView txt = (TextView) view.findViewById(R.id.txtOption);
         txt.setText(item);
-        view.findViewById(R.id.imgSelected).setVisibility(index == selected ? View.VISIBLE : View.INVISIBLE);
+        ImageView imgArrow = (ImageView) view.findViewById(R.id.imgSelected);
+        imgArrow.setVisibility(index == selected ? View.VISIBLE : View.INVISIBLE);
+        if (index == selected) {
+            imgArrow.setImageResource(selectedArrowImage);
+        }
         txt.setTextColor(index == selected ? selectedColor : defaultColor);
     }
 

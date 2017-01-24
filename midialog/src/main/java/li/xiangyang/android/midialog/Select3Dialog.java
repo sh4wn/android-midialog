@@ -1,7 +1,11 @@
 package li.xiangyang.android.midialog;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -35,14 +39,25 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
     private int secondSelectin;
     private int thirdSelelction;
 
+    private int itemTextColor;
+
     public Select3Dialog(Context context, IListener listener, String title) {
+        this(context, listener, title, R.color.midialog_select_color,R.drawable.midialog_select_box);
+
+    }
+
+    public Select3Dialog(Context context, IListener listener, String title, int itemTextColor,int bgImage) {
         super(context, R.layout.midialog_select3);
+        this.itemTextColor = itemTextColor;
+
         this.listener = listener;
 
         txtTitle = (TextView) findViewById(R.id.txtTitle);
         listFirst = (BouncingListView) findViewById(R.id.listFirst);
         listSecond = (BouncingListView) findViewById(R.id.listSecond);
         listThird = (BouncingListView) findViewById(R.id.listThird);
+
+        ((ImageView)findViewById(R.id.imgBG)).setImageResource(bgImage);
 
         final BouncingListView.OnChangeListener lis = new BouncingListView.OnChangeListener() {
             @Override
@@ -76,7 +91,11 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
     }
 
     public Select3Dialog(Context context, IListener listener, String title, List<String> itemsFirst, List<String> itemsSecond, List<String> itemsThird) {
-        this(context, listener, title);
+        this(context, listener, title, R.color.midialog_select_color,R.drawable.midialog_select_box, itemsFirst, itemsSecond, itemsThird);
+    }
+
+    public Select3Dialog(Context context, IListener listener, String title, int itemTextColor,int bgImage, List<String> itemsFirst, List<String> itemsSecond, List<String> itemsThird) {
+        this(context, listener, title, itemTextColor,bgImage);
 
         setItems(itemsFirst, 0);
         setItems2(itemsSecond, 0);
@@ -92,22 +111,30 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
 
     public void setUints(String uintFirst, String uintSecond, String uintThird) {
 
+        TextView txt;
         if (uintFirst != null) {
-            ((TextView) findViewById(R.id.txtUintFirst)).setText(uintFirst);
+            txt = ((TextView) findViewById(R.id.txtUintFirst));
+            txt.setText(uintFirst);
+            txt.setTextColor(getContext().getResources().getColorStateList(itemTextColor).getColorForState(new int[]{android.R.attr.state_selected}, Color.parseColor("#FF0000")));
         }
         if (uintSecond != null) {
-            ((TextView) findViewById(R.id.txtUintSecond)).setText(uintSecond);
+            txt = ((TextView) findViewById(R.id.txtUintSecond));
+            txt.setText(uintSecond);
+            txt.setTextColor(getContext().getResources().getColorStateList(itemTextColor).getColorForState(new int[]{android.R.attr.state_selected}, Color.parseColor("#FF0000")));
         }
         if (uintThird != null) {
-            ((TextView) findViewById(R.id.txtUintThird)).setText(uintThird);
+            txt = ((TextView) findViewById(R.id.txtUintThird));
+            txt.setText(uintThird);
+            txt.setTextColor(getContext().getResources().getColorStateList(itemTextColor).getColorForState(new int[]{android.R.attr.state_selected}, Color.parseColor("#FF0000")));
         }
+
     }
 
     public void setItems(List<String> sources, int selection) {
         if (sources == null || sources.size() == 0) {
             listFirst.setVisibility(View.GONE);
             return;
-        }else{
+        } else {
             listFirst.setVisibility(View.VISIBLE);
         }
         if (selection < 0) {
@@ -139,7 +166,7 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
             findViewById(R.id.lineSecond).setVisibility(View.GONE);
             findViewById(R.id.rlSecond).setVisibility(View.GONE);
             return;
-        }else{
+        } else {
 
             listSecond.setVisibility(View.VISIBLE);
             findViewById(R.id.lineSecond).setVisibility(View.VISIBLE);
@@ -173,7 +200,7 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
             findViewById(R.id.lineThird).setVisibility(View.GONE);
             findViewById(R.id.rlThird).setVisibility(View.GONE);
             return;
-        }else{
+        } else {
             listThird.setVisibility(View.VISIBLE);
             findViewById(R.id.lineThird).setVisibility(View.VISIBLE);
             findViewById(R.id.rlThird).setVisibility(View.VISIBLE);
@@ -251,7 +278,9 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
 
         ViewHolder vh = (ViewHolder) view.getTag();
         if (vh == null) {
-            vh = new ViewHolder((TextView) view.findViewById(R.id.txtItem));
+            TextView txtItem = (TextView) view.findViewById(R.id.txtItem);
+            vh = new ViewHolder(txtItem);
+            txtItem.setTextColor(getContext().getResources().getColorStateList(itemTextColor));
             view.setTag(vh);
         }
         vh.txt.setText(item);

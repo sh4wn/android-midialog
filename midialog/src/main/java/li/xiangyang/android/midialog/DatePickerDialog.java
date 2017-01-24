@@ -25,7 +25,11 @@ public class DatePickerDialog extends Select3Dialog {
     }
 
     public DatePickerDialog(Context context, final IListener listener, String title, int year, final int month, int day,int maxYear) {
-        super(context, null, title);
+        this(context,listener,title,R.color.midialog_select_color,R.drawable.midialog_select_box,year,month,day,maxYear);
+    }
+
+    public DatePickerDialog(Context context, final IListener listener, String title,int itemTextColor,int bgImage, int year, final int month, int day,int maxYear) {
+        super(context, null, title,itemTextColor,bgImage);
         currentYear = year;
         currentMonth = month;
         currentDay = day;

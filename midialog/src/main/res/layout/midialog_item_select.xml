@@ -8,7 +8,7 @@
         android:layout_centerInParent="true"
         android:id="@+id/txtItem"
         android:text="2016"
-        android:textColor="@color/select_color"
+        android:textColor="@color/midialog_select_color"
         android:textSize="12sp"
         />
 

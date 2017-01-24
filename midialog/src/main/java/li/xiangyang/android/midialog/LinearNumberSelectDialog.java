@@ -16,8 +16,16 @@ public class LinearNumberSelectDialog extends SelectDialog {
     private boolean floatValue = false;
 
     public LinearNumberSelectDialog(Context context, IListener lis, String title, String uint, int start, int end, int step, int selection) {
-        this(context, lis, title, uint, start, end, step, "%.0f", selection);
+        this(context,lis,title,R.color.midialog_select_color,R.drawable.midialog_select_box,uint,start,end,step,selection);
+    }
+
+    public LinearNumberSelectDialog(Context context, IListener lis, String title,int itemTextColor,int bgImage, String uint, int start, int end, int step, int selection) {
+        this(context, lis, title,itemTextColor,bgImage, uint, start, end, step, "%.0f", selection);
         floatValue = false;
+    }
+
+    public LinearNumberSelectDialog(Context context, IListener lis, String title, String uint, float start, float end, float step, String format, int selection) {
+        this(context, lis, title, R.color.midialog_select_color,R.drawable.midialog_select_box, uint, start, end, step, format, selection);
     }
 
     /**
@@ -31,8 +39,8 @@ public class LinearNumberSelectDialog extends SelectDialog {
      * @param format    ""
      * @param selection
      */
-    public LinearNumberSelectDialog(Context context, IListener lis, String title, String uint, float start, float end, float step, String format, int selection) {
-        super(context, null, title, uint);
+    public LinearNumberSelectDialog(Context context, IListener lis, String title, int itemTextColor,int bgImage, String uint, float start, float end, float step, String format, int selection) {
+        super(context, null, title,itemTextColor,bgImage, uint);
         this.listener = lis;
         super.setListener(new SelectDialog.IListener() {
             @Override

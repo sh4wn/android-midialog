@@ -11,7 +11,11 @@ public class Select2Dialog extends Select3Dialog {
     private IListener mListener;
 
     public Select2Dialog(Context context, IListener listener, String title, String unitLeft, List<String> itemsLeft, String unitRight, List<String> itemsRight) {
-        super(context, null, title);
+        this(context,listener,title,R.color.midialog_select_color,R.drawable.midialog_select_box,unitLeft,itemsLeft,unitRight,itemsRight);
+    }
+
+    public Select2Dialog(Context context, IListener listener, String title,int itemTextColor,int bgImage, String unitLeft, List<String> itemsLeft, String unitRight, List<String> itemsRight) {
+        super(context, null, title,itemTextColor,bgImage);
         super.setListener(new Select3Dialog.IListener() {
             @Override
             public void onCancel() {
@@ -43,6 +47,10 @@ public class Select2Dialog extends Select3Dialog {
 
     public Select2Dialog(Context context, IListener o, String title, String unitLeft, String unitRight) {
         this(context, o, title, unitLeft, null, unitRight, null);
+    }
+
+    public Select2Dialog(Context context, IListener o, String title,int itemTextColor,int bgImage, String unitLeft, String unitRight) {
+        this(context, o, title,itemTextColor,bgImage, unitLeft, null, unitRight, null);
     }
 
     public void setListener(IListener lis) {
