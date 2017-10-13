@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -286,11 +287,11 @@ public class Select3Dialog extends BaseDialog implements CommonListAdapter.ViewF
         vh.txt.setText(item);
 
         if (index == select + 2) {
-            vh.txt.setTextSize(dp2px(7));
+            vh.txt.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
             vh.txt.setSelected(true);
         } else {
             vh.txt.setSelected(false);
-            vh.txt.setTextSize(dp2px(5));
+            vh.txt.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
         }
     }
 
