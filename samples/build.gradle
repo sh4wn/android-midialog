@@ -11,7 +11,7 @@ repositories {
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion '26.0.2'
 
     defaultConfig {
         applicationId "li.xiangyang.android.midialog.samples"
@@ -26,12 +26,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile project(':midialog')
-    compile 'com.android.support.constraint:constraint-layout:1.0.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'junit:junit:4.12'
 }

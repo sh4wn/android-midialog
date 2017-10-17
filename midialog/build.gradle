@@ -1,11 +1,12 @@
+plugins {
+    id "com.jfrog.bintray" version "1.7.3"
+    id "com.github.dcendents.android-maven" version "1.4.1"
+}
 apply plugin: 'com.android.library'
-apply plugin: 'com.jfrog.bintray'
-apply plugin: 'com.github.dcendents.android-maven'
-
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion '26.0.2'
 
     defaultConfig {
         minSdkVersion 18
@@ -19,28 +20,30 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:appcompat-v7:25.0.0'
     compile 'li.xiangyang.android:touchable-controls:0.2'
 }
 
+
+
 // Bintray upload
 
-apply plugin: 'com.jfrog.bintray'
-apply plugin: 'com.github.dcendents.android-maven'
 
 
 group = "li.xiangyang.android"
-version = "1.1.3"
+version = "1.2.2"
 
 def siteUrl = 'https://github.com/backav/android-midialog'    // project homepage
 def gitUrl = 'https://github.com/backav/android-midialog.git' // project git
 def pkgName = 'android-midialog'
-def pkgDesc = "MIUI style sialog for Android"
+def pkgDesc = "MIUI style dialog for Android"
 
 // 根节点添加
 install {
@@ -60,8 +63,8 @@ install {
                 developers {
                     developer {
                         id 'backav'
-                        name 'xiangyang li'
-                        email 'wo@xiangyang.li'
+                        name 'shawn li'
+                        email 'shawn@xiangyang.li'
                     }
                 }
                 scm {
@@ -107,6 +110,11 @@ bintray {
     user = properties.getProperty("bintray.user")
     key = properties.getProperty("bintray.apikey")
 
+    dryRun = false //[Default: false] Whether to run this as dry-run, without deploying
+    publish = true //[Default: false] Whether version should be auto published after an upload
+    override = false //[Default: false] Whether to override version artifacts already published
+
+    apiUrl="https://api.bintray.com"
     configurations = ['archives']
     pkg {
         repo = "maven"
