@@ -2,6 +2,7 @@ package li.xiangyang.android.midialog.samples;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.NumberPicker;
@@ -46,8 +47,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 InputDialog dialog = new InputDialog(MainActivity.this);
-
                 dialog.setText("bac");
+                dialog.setInputFilter(new InputFilter[]{new HanzLengthInputFilter(10)});
                 dialog.show();
             }
         });
@@ -129,6 +130,7 @@ public class MainActivity extends Activity {
                     }
                 }, getString(R.string.midialog_alert), getString(R.string.thisisaalert));
                 dialog.setButtonText("OK");
+                // 系统应用才有的权限，会crash
                 dialog.setWindowType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
                 dialog.show();
             }

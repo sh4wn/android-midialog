@@ -34,6 +34,8 @@
             android:textColor="#7f7f7f"
             android:textColorHint="#EEEEEE"
             android:hint="@string/midialog_input_content"
+            android:singleLine="true"
+            android:lines="1"
             android:layout_below="@+id/txtTitle"
             android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true"
