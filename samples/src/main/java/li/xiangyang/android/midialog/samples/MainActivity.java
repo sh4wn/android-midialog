@@ -1,6 +1,7 @@
 package li.xiangyang.android.midialog.samples;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.view.View;
@@ -65,7 +66,7 @@ public class MainActivity extends Activity {
                     public void onSelected(int index, String option) {
 
                     }
-                }, getString(R.string.gender), 0, getString(R.string.male), getString(R.string.female)).show();
+                }, getString(R.string.gender), 0, Color.parseColor("#FABE00"),R.drawable.arrow_yellow, getString(R.string.male), getString(R.string.female)).show();
             }
         });
 
@@ -97,7 +98,7 @@ public class MainActivity extends Activity {
 
                         Toast.makeText(MainActivity.this, "" + year + ":" + month + ":" + day, Toast.LENGTH_SHORT).show();
                     }
-                }, getString(R.string.birthday), year, month, day, Calendar.getInstance().get(Calendar.YEAR)-6).show();
+                }, getString(R.string.birthday),R.color.midialog_select_color_yellow,R.drawable.midialog_select_box_yellow, year, month, day, Calendar.getInstance().get(Calendar.YEAR)-6).show();
             }
         });
 
@@ -115,7 +116,7 @@ public class MainActivity extends Activity {
                     public void onDone(Number number) {
                         Toast.makeText(MainActivity.this, "" + number, Toast.LENGTH_SHORT).show();
                     }
-                }, getString(R.string.weight), getString(R.string.kg), 130, 230, 1, 0);
+                }, getString(R.string.weight),R.color.midialog_select_color_yellow,R.drawable.midialog_select_box_yellow, getString(R.string.kg), 130, 230, 1, 0);
                 dialog.show();
             }
         });
@@ -139,7 +140,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.btnSelect2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Select2Dialog dialog=new Select2Dialog(MainActivity.this,null,"2","","");
+                Select2Dialog dialog=new Select2Dialog(MainActivity.this,null,"2",R.color.midialog_select_color_yellow,R.drawable.midialog_select_box_yellow,"","");
                 List<String> left=new ArrayList<String>();
                 left.add("福建");
 

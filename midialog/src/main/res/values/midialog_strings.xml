@@ -11,4 +11,5 @@
     <string name="midialog_choice_one">Choice</string>
     <string name="midialog_title">Title</string>
     <string name="midialog_option">Option</string>
+    <string name="progressing">Progressing...</string>
 </resources>
