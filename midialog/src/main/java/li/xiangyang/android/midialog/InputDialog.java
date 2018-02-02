@@ -1,6 +1,7 @@
 package li.xiangyang.android.midialog;
 
 import android.content.Context;
+import android.text.InputFilter;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -51,6 +52,22 @@ public class InputDialog extends BaseDialog {
         if (txt != null) {
             txtInput.setHint(txt);
         }
+    }
+
+    public void setInputFilter(InputFilter[] filters) {
+        txtInput.setFilters(filters);
+    }
+
+    public InputFilter[] getInputFilter() {
+        return txtInput.getFilters();
+    }
+
+    public void setSingleLine(boolean singleLine) {
+        txtInput.setSingleLine(singleLine);
+    }
+
+    public void setLines(int lines) {
+        txtInput.setLines(lines);
     }
 
     public void setCloseManually(boolean closeManually) {
