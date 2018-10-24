@@ -5,8 +5,8 @@ plugins {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '26.0.3'
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
 
     defaultConfig {
         minSdkVersion 18
@@ -27,8 +27,8 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:25.0.0'
-    compile 'li.xiangyang.android:touchable-controls:0.2'
+    compile 'com.android.support:appcompat-v7:27.1.1'
+    compile 'li.xiangyang.android:touchable-controls:0.5'
 }
 
 
@@ -38,7 +38,7 @@ dependencies {
 
 
 group = "li.xiangyang.android"
-version = "1.2.4"
+version = "1.2.5"
 
 def siteUrl = 'https://github.com/backav/android-midialog'    // project homepage
 def gitUrl = 'https://github.com/backav/android-midialog.git' // project git

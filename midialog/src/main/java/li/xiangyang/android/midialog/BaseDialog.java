@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -40,14 +41,18 @@ abstract class BaseDialog {
     protected abstract void onCancel();
 
     public void show() {
-        dialog.show();
+        try {
+            dialog.show();
+        } catch (Exception ex) {
+            Log.e("BaseDialog", "show出现异常", ex);
+        }
     }
 
     public void dismiss() {
         try {
             dialog.dismiss();
         } catch (Exception ex) {
-
+            Log.e("BaseDialog", "dismiss出现异常", ex);
         }
     }
 
